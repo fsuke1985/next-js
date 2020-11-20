@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Link from 'next/link'
 import Layout, { siteTitle } from '../components/layout'
 import utilStyles from '../styles/utils.module.css'
 import { getSortedPostsData } from '../lib/posts'
@@ -19,7 +20,7 @@ export default function Home({ allPostsData }) {
             <li className={utilStyles.listItem} key={id}>
               {title}
               <br />
-              {id}
+              <Link href={`/posts/${encodeURIComponent(id)}`}><a>{id}</a></Link>
               <br />
               {date}
             </li>
