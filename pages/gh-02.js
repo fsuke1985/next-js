@@ -15,10 +15,4 @@ const Index = ({ data }) => {
 
 export default Index
 
-export async function getServerSideProps(context) {
-    return {
-        props: {
-            data: context.req.httpVersion
-        }
-    }
-}
+
