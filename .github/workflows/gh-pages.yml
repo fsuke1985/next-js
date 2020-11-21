@@ -75,5 +75,5 @@ jobs:
       # up to s3
       - name: s3 up
         if: "contains(github.event.head_commit.message, '[s3]')"
-        working-directory: dist
+        working-directory: ./out
         run: aws s3 sync . s3://wwwgit
