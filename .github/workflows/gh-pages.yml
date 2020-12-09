@@ -65,7 +65,7 @@ jobs:
           publish_dir: ./out
   deploy:            
       needs: build
-      run-on: ubuntu-latest
+      runs-on: ubuntu-latest
       steps:
         - name: test deploy
           run: pwd
