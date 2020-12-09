@@ -63,17 +63,22 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./out
-          
-      # aws setup
-      - name: set up to aws credentials
-        if: "contains(github.event.head_commit.message, '[s3]')"
-        uses: aws-actions/configure-aws-credentials@v1
-        with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region:  ap-northeast-1
-      # up to s3
-      - name: s3 up
-        if: "contains(github.event.head_commit.message, '[s3]')"
-        working-directory: ./out
-        run: aws s3 sync . s3://wwwgit
+  deploy:            
+      needs: build
+      run-on: ubuntu-latest
+      steps:
+        - name: test deploy
+          run: pwd
+        # aws setup
+        - name: set up to aws credentials
+          if: "contains(github.event.head_commit.message, '[s3]')"
+          uses: aws-actions/configure-aws-credentials@v1
+          with:
+            aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+            aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+            aws-region:  ap-northeast-1
+        # up to s3
+        - name: s3 up
+          if: "contains(github.event.head_commit.message, '[s3]')"
+          working-directory: ./out
+          run: aws s3 sync . s3://wwwgit
