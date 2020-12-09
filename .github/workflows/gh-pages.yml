@@ -80,7 +80,7 @@ jobs:
           with:
             name: next-artifact
         - name: test deploy
-          run: ls -altr .
+          run: pwd && ls -altr .
         # aws setup
         - name: set up to aws credentials
           if: "contains(github.event.head_commit.message, '[s3]')"
