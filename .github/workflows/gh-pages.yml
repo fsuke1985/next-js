@@ -79,14 +79,8 @@ jobs:
           uses: actions/download-artifact@v2
           with:
             name: next-artifact
-<<<<<<< HEAD
-        - name: test deploy
-          run: pwd && ls -altr .
-=======
->>>>>>> workflow add deploy test [s3]
         # aws setup
         - name: set up to aws credentials
-          if: "contains(github.event.head_commit.message, '[s3]')"
           uses: aws-actions/configure-aws-credentials@v1
           with:
             aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
@@ -94,6 +88,5 @@ jobs:
             aws-region:  ap-northeast-1
         # up to s3
         - name: s3 up
-          if: "contains(github.event.head_commit.message, '[s3]')"
 #          working-directory: ./next-artifact
           run: aws s3 sync . s3://wwwgit
