@@ -37,6 +37,7 @@ const Episodes = () => {
             ">
                 <h2 className="
                     pl-16 pt-2 pb-2
+                    transition duration-200 ease-in-out hover:text-white hover:bg-blue-600
                 ">
                     {children}
                 </h2>
