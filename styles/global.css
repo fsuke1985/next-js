@@ -1,3 +1,6 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 html,
 body {
   padding: 0;
@@ -6,6 +9,7 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   line-height: 1.6;
   font-size: 18px;
+  @apply bg-rebuild font-light;
 }
 
 * {
@@ -24,4 +28,13 @@ a:hover {
 img {
   max-width: 100%;
   display: block;
+}
+
+@layer utilities {
+    .h-65px {
+        height: 65px;
+    }
+    .w-65px {
+        width: 65px;
+    }
 }
