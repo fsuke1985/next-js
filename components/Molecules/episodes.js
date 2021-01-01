@@ -24,12 +24,11 @@ const Spacing  = () => {
 }
 const Episodes = () => {
     return (
-        <div className="flex flex-col">
-            <div className="flex flex-wrap relative">
-                <span className="absolute bg-black text-white rounded-full h-12 w-12 items-center justify-center p-8" >Dec 28<br/>2020
-                </span>
-                <div className="flex-auto items-center p-8">292: Two Chickens, One Stone (hak)</div>
-                <div className="flex-auto items-center font-medium mt-2 text-gray-500 leading-tight">Hakuro Matsuda さんをゲストに迎えて、Snapdragon 888, Stadia, スマートホーム、cyberpunk 2077 などについて話しました。</div>
+        <div className="flex flex-col shadow border-white">
+            <div className="flex flex-wrap relative bg-white">
+                <span className="font-serif italic text-xs flex absolute bg-black text-white items-center justify-center rounded-full -top-6 -left-5 w-65px h-65px " >Dec 28<br/>2020</span>
+                <div className="flex-auto items-center text-center p-4 pl-9 truncate ...">292: Two Chickens, One Stone (hak)</div>
+                <div className="flex-auto items-center bg-rebuild font-medium t ext-gray-500 leading-tight p-2 border border-white">Hakuro Matsuda さんをゲストに迎えて、Snapdragon 888, Stadia, スマートホーム、cyberpunk 2077 などについて話しました。</div>
             </div>
         </div>
     );
