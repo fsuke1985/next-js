@@ -1,10 +1,11 @@
 import Layout from 'components/Layout';
-import Episodes from 'components/Molecules/episodes';
+import Ep, {CaseStudy} from 'components/Molecules/episodes';
 
-export default () => {
+export default function Module_Episodes() {
     return (
         <Layout>
-        <Episodes />
+            <CaseStudy title="TITLE" link={ { tag: 1 } }>studysdf djfkdjfkdjjkj</CaseStudy>
+            <Ep></Ep>
         </Layout>
     )
 }
