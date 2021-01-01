@@ -25,7 +25,7 @@ const Spacing  = () => {
 const Episodes = () => {
     return (
         <div className="flex flex-col">
-            <div className="flex flex-wrap">
+            <div className="flex flex-wrap relative">
                 <span className="absolute bg-black text-white rounded-full h-12 w-12 items-center justify-center p-8" >Dec 28<br/>2020
                 </span>
                 <div className="flex-auto items-center p-8">292: Two Chickens, One Stone (hak)</div>
