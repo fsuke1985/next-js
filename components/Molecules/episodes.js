@@ -44,12 +44,31 @@ const Episodes = () => {
         );
     };
 
+    let TitleContainer = props => {
+        const { children, mes, ...args } = props;
+
+        return (
+            <div className="
+                flex-auto 
+                items-center 
+                bg-rebuild 
+                text-gray-400 text-xs font-light
+                leading-5
+                p-2 
+                border 
+                border-white
+            ">
+                    {children} 
+            </div>
+        );
+    };
+
     return (
         <div className="flex flex-col shadow border-white">
             <div className="flex flex-wrap relative bg-white">
                 <span className="font-serif italic text-xs flex absolute bg-black text-white items-center justify-center rounded-full -top-6 -left-5 w-65px h-65px " >Dec 28<br/>2020</span>
                 <TitleHeader>292: Two Chickens, One Stone (hak)</TitleHeader>
-                <div className="flex-auto items-center bg-rebuild font-medium t ext-gray-500 leading-tight p-2 border border-white">Hakuro Matsuda さんをゲストに迎えて、Snapdragon 888, Stadia, スマートホーム、cyberpunk 2077 などについて話しました。</div>
+                <TitleContainer>Hakuro Matsuda さんをゲストに迎えて、Snapdragon 888, Stadia, スマートホーム、cyberpunk 2077 などについて話しました。</TitleContainer>
             </div>
         </div>
     );
