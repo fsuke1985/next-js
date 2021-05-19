@@ -1,8 +1,8 @@
-import Head from 'next/head'
-import Link from 'next/link'
-import Layout, { siteTitle } from '../components/layout'
-import utilStyles from '../styles/utils.module.css'
-import { getSortedPostsData } from '../lib/posts'
+import Head from "next/head";
+import Link from "next/link";
+import Layout, { siteTitle } from "../components/layout";
+import utilStyles from "../styles/utils.module.css";
+import { getSortedPostsData } from "../lib/posts";
 
 export default function Home({ allPostsData }) {
   return (
@@ -20,7 +20,9 @@ export default function Home({ allPostsData }) {
             <li className={utilStyles.listItem} key={id}>
               {title}
               <br />
-              <Link href={`/posts/${encodeURIComponent(id)}`}><a>{id}</a></Link>
+              <Link href={`/posts/${encodeURIComponent(id)}`}>
+                <a>{id}</a>
+              </Link>
               <br />
               {date}
             </li>
@@ -28,14 +30,15 @@ export default function Home({ allPostsData }) {
         </ul>
       </section>
     </Layout>
-  )
+  );
 }
 
+//add commnet
 export async function getStaticProps() {
-  const allPostsData = getSortedPostsData()
+  const allPostsData = getSortedPostsData();
   return {
     props: {
       allPostsData
     }
-  }
+  };
 }
